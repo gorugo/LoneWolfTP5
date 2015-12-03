@@ -1,11 +1,11 @@
-doctype
-html(lang="fr", ng-app)
+doctype html 
+html(lang="fr" )
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/globale.css')
-    script(src="/node_modules/angular/angular.js")
+    script(src="angular.js")
     block head
-  body(ng-controller)
+  body()
     nav
         ul
             li
@@ -15,8 +15,8 @@ html(lang="fr", ng-app)
             li
                 a#reglesJeu(href="/aide") Règles du jeu
 
+    p <div ng-app> 1 + 2 = {{ 1 + 2 }}</div>
     block content
-    p 1 + 2 = {{ 1 + 2 }}
 
     footer
         p Les Grottes de Kalte - Lone Wolf
