@@ -8,9 +8,9 @@ var bodyParser = require('body-parser');
 
 // Configuration de la base de données MongoDB.
 var mongoose = require('mongoose');
-var utilisateur = '...';
-var mdp = '...';
-var adresse = '...';
+var utilisateur = 'glelan';
+var mdp = 'lonywolfylog4420';
+var adresse = '@ds051524.mongolab.com:51524/lone_wolf';
 mongoose.connect('mongodb://' + utilisateur + ':' + mdp + adresse);
 
 var routes = require('./routes/index');
