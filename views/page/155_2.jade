@@ -1,0 +1,12 @@
+p La corniche en rejoint une autre que vous avez beaucoup de mal à parcourir. Lorsque, enfin, vous arrivezau bout, vous vous trouvez au sommet d'une paroi impressionnante. Pour descendre dans l'étroit défilé que vous apercevez à 300 mètres au-dessous, il vous faudra emprunter un escalier particulièrement raide et dangereux dont les marches sont taillées dans la glace.
+
+p Utilisez la Table de Hasard pour obtenir un chiffre. Si votre total d'ENDURANCE actuel est inférieur à 10, vous ôterez 2 au chiffre obtenu. Si ce total est supérieur à 20, vous ajouterez 1 au chiffre donné par la Table.
+
+-
+    decisions = [
+    { page: 248, text: "Si le total obtenu se situe entre -2 et 2," },
+    { page: 191, text: "S'il est de 3 à 10," }
+    ]
+include decision
++ decision(decisions)
+

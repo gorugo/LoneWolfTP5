@@ -1,0 +1,90 @@
+extends layout
+
+block head
+    link(rel="stylesheet", href="/stylesheets/creationJoueur.css")
+
+block content
+    img(src="/images/loup_solitaire.png")
+
+    section
+        h1 Création du personnage
+
+        div#erreurs
+            ul
+                each e in erreursMsg
+                    li=e
+
+        form(action="/jeu/1" method="post")
+            fieldset
+                legend Disciplines
+                p Choisir 5 disciplines:
+                div#gauche
+                    label
+                        input(type="checkbox" name="discipline" value=c.discipline.CAMOUFLAGE checked)
+                        | Le camouflage
+                    label
+                        input(type="checkbox" name="discipline" value=c.discipline.CHASSE checked)
+                        | La chasse
+                    label
+                        input(type="checkbox" name="discipline" value=c.discipline.SIXIEME_SENS checked)
+                        | Sixième Sens
+                    label
+                        input(type="checkbox" name="discipline" value=c.discipline.ORIENTATION checked)
+                        | L'Orientation
+                    label
+                        input(type="checkbox" name="discipline" value=c.discipline.GUERISON checked)
+                        | La guérison
+                div#droite
+                    label
+                        input(type="checkbox" name="discipline" value=c.discipline.MAITRISE_ARMES)
+                        | La Maîtrise des Armes
+                    label
+                        input(type="checkbox" name="discipline" value=c.discipline.BOUCLIER_PSYCHIQUE)
+                        | Bouclier Psychique
+                    label
+                        input(type="checkbox" name="discipline" value=c.discipline.PUISSANCE_PSYCHIQUE)
+                        | Puissance Psychique
+                    label
+                        input(type="checkbox" name="discipline" value=c.discipline.COMMUNICATION_ANIMALE)
+                        | Communication Animale
+                    label
+                        input(type="checkbox" name="discipline" value=c.discipline.MAITRISE_PSYCHIQUE_MATIERE)
+                        | Maîtrise Psychique de la Matière
+            fieldset
+                legend Équipement
+                p Choisir 2 items:
+                div
+                    label
+                        input(type="checkbox" name="arme" value=c.arme.EPEE)
+                        | Épée (Arme)
+                    label
+                        input(type="checkbox" name="arme" value=c.arme.SABRE)
+                        | Sabre (Arme)
+                    label
+                        input(type="checkbox" name="arme" value=c.arme.LANCE)
+                        | Lance (Arme)
+                    label
+                        input(type="checkbox" name="arme" value=c.arme.MASSE_ARME)
+                        | Masse d'Arme (Arme)
+                    label
+                        input(type="checkbox" name="arme" value=c.arme.MARTEAU_GUERRE)
+                        | Marteau de Guerre (Arme)
+                    label
+                        input(type="checkbox" name="arme" value=c.arme.HACHE)
+                        | Hâche (Arme)
+                    label
+                        input(type="checkbox" name="arme" value=c.arme.BATON)
+                        | Bâton (Arme)
+                    label
+                        input(type="checkbox" name="arme" value=c.arme.GLAIVE)
+                        | Glaive (Arme)
+                    label
+                        input(type="checkbox" name="objetSpecial" value=c.objetSpecial.GILET_CUIR_MARTELE checked)
+                        | Gilet de Cuir Martelé (Objet Spécial)
+                    label
+                        input(type="checkbox" name="objet" value=c.objet.POTION_LAMPSUR checked)
+                        | Potion de Lampsur (Objet dans le sac à dos)
+                    label
+                        input(type="checkbox" name="objet" value=c.objet.RATIONS_SPECIALES)
+                        | Rations spéciales (Objet dans le sac à dos)
+            input.button(type="submit" value="Commencer la partie!")

@@ -1,0 +1,7 @@
+mixin decision(decisions)
+    div#decision
+        img(src="/images/decision.jpg")
+        div
+            each d in decisions
+                p #{d.text} #[a(href="/jeu/#{d.page}") rendez-vous au #{d.page}]
+

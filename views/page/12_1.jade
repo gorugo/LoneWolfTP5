@@ -1,0 +1,22 @@
+p Le matériel et les vivres sont rapidement déballés et répartisentre vous. Vous recevez des provisions qui représentent l'équivalent de 3 Repas, des Couvertures en Fourrure et une Corde. Inscrivez tous ces éléments sur votre Feuille d'Aventure en sachant que les Couvertures en Fourrure prennent dans votre Sac à Dos la place de deux objets normaux.
+
+div#ajouterObjets
+    fieldset
+        legend Choisir le(s) objet(s) à conserver
+        div
+            label
+                input(type="checkbox" value="repas")
+                | 3 Repas
+
+        div
+            label
+                input(type="checkbox" value="couvertureFourrure")
+                | Couverture en fourrure
+
+        div
+            label
+                input(type="checkbox" value="corde")
+                | Corde
+
+    button.button Ajouter!
+
