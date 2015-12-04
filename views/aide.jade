@@ -1,7 +1,7 @@
 extends layout
 
 block head
-    link(rel="stylesheet", href="/stylesheets/aide.css")    
+    link(rel="stylesheet", href="/stylesheets/aide.css")
 
 block content
     section
@@ -11,12 +11,12 @@ block content
 
         p Nous présentons dans cette section les principes de fonctionnement du jeu, afin de vous fournir une vision globale de ce que vous devrez implémenter tout au long du trimestre. Mais toute la logique et les calculs derrière ces principes ne seront pas implémentés avant le TP3.
 
-        p Lorsqu’on débute le jeu, trois valeurs sont générées aléatoirement. La première, que nous appellerons points d’HABILETÉ, comprise entre 10 et 19, détermine l’HABILETÉ au combat. La deuxième représente les points d’ENDURANCE et est comprise entre 20 et 29. Lorsqu’un joueur est blessé dans un combat, il perd des points d’ENDURANCE. Lorsque la valeur sera à zéro, il sera considéré mort et son aventure sera donc terminée. Dans certaines situations, il sera possible de récupérer des points d’ENDURANCE, mais on ne pourra jamais dépasser la valeur initiale. La troisième valeur, comprise entre 10 et 19, indique le nombre de Pièces d’Or que possède le joueur au départ. À noter qu’à aucun moment le joueur ne pourra posséder sur lui plus de 50 Pièces d’Or. 
+        p Lorsqu’on débute le jeu, trois valeurs sont générées aléatoirement. La première, que nous appellerons points d’HABILETÉ, comprise entre 10 et 19, détermine l’HABILETÉ au combat. La deuxième représente les points d’ENDURANCE et est comprise entre 20 et 29. Lorsqu’un joueur est blessé dans un combat, il perd des points d’ENDURANCE. Lorsque la valeur sera à zéro, il sera considéré mort et son aventure sera donc terminée. Dans certaines situations, il sera possible de récupérer des points d’ENDURANCE, mais on ne pourra jamais dépasser la valeur initiale. La troisième valeur, comprise entre 10 et 19, indique le nombre de Pièces d’Or que possède le joueur au départ. À noter qu’à aucun moment le joueur ne pourra posséder sur lui plus de 50 Pièces d’Or.
 
         h2 Disciplines Kai
         p Le joueur débute avec le rang d'Initié, ce qui signifie qu'il peut maîtriser 5 disciplines parmi les 10 disponibles :
         ul
-            li Le Camouflage: Cette technique permet au Seigneur Kaï de se fondre dans le paysage. À la campagne, il peut se cacher parmi les arbres et lesrochers et se rendre de cette façon invisible à l'ennemi même s'ilpasse tout près de lui. Dans une ville, cette Discipline donnera àcelui qui l'utilise la faculté d'avoir l'air d'un habitant du cru, tantpar l'apparence que par l'accent ou la langue employée. On peutainsi trouver un abri où se cacher en toute sécurité. 
+            li Le Camouflage: Cette technique permet au Seigneur Kaï de se fondre dans le paysage. À la campagne, il peut se cacher parmi les arbres et lesrochers et se rendre de cette façon invisible à l'ennemi même s'ilpasse tout près de lui. Dans une ville, cette Discipline donnera àcelui qui l'utilise la faculté d'avoir l'air d'un habitant du cru, tantpar l'apparence que par l'accent ou la langue employée. On peutainsi trouver un abri où se cacher en toute sécurité.
             li La Chasse: Cette Discipline donne au Seigneur Kaï l'assurance qu'il ne mourra jamais de faim, même s'il se trouve dans un environnement hostile. Il aura toujours la possibilité de chasser pour se procurer de la nourriture, sauf dans les déserts et autres régions arides. Vous devez savoir que la Vassagonie est un empire situé au cœur du désert. Dans ce pays aride, les occasions de faire bonne chasse seront peut-être rares, pour ne pas dire inexistantes. Cette technique, cependant, se révélera très utile, car elle permet à un Seigneur Kaï de se déplacer très vite et avec une grande agilité.
             li Sixième sens: Grâce à cette technique, le Seigneur Kaï devine les dangers imminents qui le menacent. Ce Sixième Sens peut également lui révéler les intentions véritables d'un inconnu ou la nature d'un objet étrange rencontré au cours d'une aventure.
             li L'Orientation: Chaque fois qu'il se trouvera dans l'obligation de décider quelle direction il doit prendre, le Seigneur Kaï fera toujours le bon choix grâce à cette technique. Il saura ainsi quel chemin il convient d'emprunter dans une forêt et il pourra également, dans une ville, découvrir l'endroit où est caché une personne ou un objet. Par ailleurs, il saura interpréter chaque trace de pas, chaque empreinte qui pourrait lui permettre de remonter une piste.
@@ -54,7 +54,7 @@ block content
             li Rations spéciales: (Objet contenu dans le sac à dos). Elles comptent pour un repas.
 
         h2 Combats
-        p. 
+        p.
             Durant l’aventure, le joueur peut être impliqué dans plusieurs combats. À chaque fois, les points d’HABILETÉ et d’ENDURANCE de l’ennemi seront spécifiés. Le joueur devra alors s’efforcer de tuer son adversaire en réduisant à zéro ses points d’ENDURANCE, tout en essayant lui-même de perdre le moins possible de points d’ENDURANCE. Chaque combat se déroule de la manière suivante :
 
         ol
@@ -68,4 +68,3 @@ block content
         p Si le joueur a la possibilité de fuir, il peut le faire à la fin d’un round, après avoir diminué ses points d’ENDURANCE.
         p D’autres règles du livre-jeu original, comme les niveaux d’entraînement et les rangs/titre accordés aux seigneurs Kaï, ne seront pas utilisées dans ce travail.
         p L’aventure se déroule comme suit. Le joueur commence au paragraphe 1 du livre. À certains moments, il peut avoir des choix à faire, qui l’emmèneront à un autre paragraphe du livre. À d’autres moments, il sera engagé dans des combats, qu’il devra mener en suivant les règles citées précédemment.
-

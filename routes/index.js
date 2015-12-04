@@ -12,4 +12,3 @@ router.get('/aide', function(req, res, next) {
 });
 
 module.exports = router;
-

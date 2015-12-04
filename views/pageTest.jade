@@ -1,0 +1,13 @@
+extends layout
+block head
+  //-script(type='text/javascript', src="javascripts/controllers/testAngularPublicSide.js")
+block content
+  section(ng-app="appTest")
+    div
+      p Sur cette page on peut tester plus simplement angularJS
+      p(ng-app) 1 + 2 = {{ 1 + 2 }}
+
+    br
+
+    div(ng-controller="controlleurTest") Affichage :
+      p {{leString}}

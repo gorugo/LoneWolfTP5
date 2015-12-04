@@ -39,4 +39,3 @@ router.get('/jeu/:pageId', function(req, res, next) {
 });
 
 module.exports = router;
-

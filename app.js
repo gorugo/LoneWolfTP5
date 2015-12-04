@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+//var angular = require('angular');
 
 // Configuration de la base de données MongoDB.
 var mongoose = require('mongoose');
@@ -19,6 +20,8 @@ var pageJeu = require('./routes/pageJeu');
 var pages = require('./routes/api/pages');
 var joueurs = require('./routes/api/joueurs');
 var combat = require('./routes/api/combat');
+
+var test = require('./routes/routeTestAngular');//For tests
 
 var app = express();
 
@@ -39,6 +42,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/', creationJoueur);
 app.use('/', pageJeu);
+
+app.use('/', test);//For tests
 
 app.use('/api/*', bodyParser.json({ type: 'application/json' }));
 app.use('/api/pages', pages);
