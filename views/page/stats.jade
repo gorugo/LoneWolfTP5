@@ -1,4 +1,5 @@
-section#stats
+script(type='text/javascript', src="/javascripts/controllers/controlleurStats.js")
+section#stats(ng-app="stats", ng-controller="controlleurStats")
     p Feuille d'Aventure
     table
         tbody
@@ -6,22 +7,21 @@ section#stats
                 td
                     img(src="/images/points_endurance.png")
                 td
-                    p #[span#endurance_restante 18] / #[span#endurance_total 20]
+                    p #[span#endurance_restante {{joueur.enduranceBase}}] / #[span#endurance_total {{joueur.endurancePlus}}]
             tr
                 td
                     img(src="/images/points_habilete.png")
                 td
-                    p#habilete 30
+                    p#habilete {{joueur.habiletePlus}} 
             tr
                 td
                     img(src="/images/pieces_or.png")
                 td
-                    p #[span#pieceOr 10] / #[span#endurance_total 50]
+                    p #[span#pieceOr {{joueur.pieceOr}}] / #[span#endurance_total 50]
     div
         p Disciplines Kai
-        ul#disciplines
-            li Communication Animale
-            li Écran Psychique
+        ul#disciplines(ng-repeat="discipline in joueur.disciplines")
+          li - {{discipline}}
 
     p
         a.button(href="#sacADos") Sac à dos
@@ -31,11 +31,9 @@ section#stats
         div
             div
                 p Objets
-                ul
-                    li Marteau de guerre
-                    li Rations spéciales
+                ul(ng-repeat="objet in joueur.objets")
+                  li {{objet}}
             div
                 p Objets Spéciaux
-                ul
-                    li Huile de Baknar
-
+                ul(ng-repeat="objetSpecial in objetsSpeciaux")
+                  li {{objetSpecial}}
