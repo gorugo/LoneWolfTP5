@@ -1,6 +1,6 @@
-var app = angular.module('stats', []);
 
-app.controller('controlleurStats', function($scope, $http) {
+angular.module('statsApp', []).
+controller('controlleurStats', function($scope, $http) {
 
   $scope.getJoueur = function () { 
     $http.get('/api/joueurs/565c64518b7057980cb10be9').
