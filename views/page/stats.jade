@@ -4,6 +4,11 @@ section#stats(ng-app="statsApp", ng-controller="controlleurStats")
         tbody
             tr
                 td
+                    p Nom du joueur :
+                td
+                    {{joueur.nom}}
+            tr
+                td
                     img(src="/images/points_endurance.png")
                 td
                     p #[span#endurance_restante {{joueur.enduranceBase}}] / #[span#endurance_total {{joueur.endurancePlus}}]
@@ -11,7 +16,7 @@ section#stats(ng-app="statsApp", ng-controller="controlleurStats")
                 td
                     img(src="/images/points_habilete.png")
                 td
-                    p#habilete {{joueur.habiletePlus}} 
+                    p#habilete {{joueur.habiletePlus}}
             tr
                 td
                     img(src="/images/pieces_or.png")
