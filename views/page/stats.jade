@@ -1,4 +1,3 @@
-script(type='text/javascript', src="/javascript/controlleurs/controlleurStats.js")
 section#stats(ng-app="statsApp", ng-controller="controlleurStats")
     p Feuille d'Aventure
     table
@@ -21,19 +20,19 @@ section#stats(ng-app="statsApp", ng-controller="controlleurStats")
     div
         p Disciplines Kai
         ul#disciplines(ng-repeat="discipline in joueur.disciplines")
-          li - {{discipline}}
+            li - {{discipline}}
 
     p
         a.button(href="#sacADos") Sac à dos
     div#sacADos
         a#fermerSacADos(href="#")
-        img(src="/images/backpack.png")
+            img(src="/images/backpack.png")
         div
             div
                 p Objets
                 ul(ng-repeat="objet in joueur.objets")
-                  li {{objet}}
+                    li {{objet}}
             div
                 p Objets Spéciaux
                 ul(ng-repeat="objetSpecial in objetsSpeciaux")
-                  li {{objetSpecial}}
+                    li {{objetSpecial}}
