@@ -4,7 +4,7 @@ var app = angular.module('appTest', []);
 
 app.controller('controlleurTest', function($scope, $http) {
 
-  $scope.getTest = function () { 
+  $scope.getTest = function () {
     $http.get('/api/combat/12/34/1/132').
       success(function(data, status, headers, config) {
 
@@ -31,13 +31,3 @@ app.controller('controlleurTest', function($scope, $http) {
   $scope.leString = 'EZ';
   $scope.salutation = { texte: 'Bonjour' };
 });
-
-// app.controller('controlleurTest',['$scope','$http',function($scope,$http)
-// {
-//     $http.get('/test')
-//         .then(function(response){
-//             $scope.leString = 'EZ';
-//         },
-//             function(response){
-//             });
-// }]);

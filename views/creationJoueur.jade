@@ -2,11 +2,12 @@ extends layout
 
 block head
     link(rel="stylesheet", href="/stylesheets/creationJoueur.css")
+    script(type='text/javascript', src="/javascript/controlleurs/creationJoueur.js")
 
 block content
     img(src="/images/loup_solitaire.png")
 
-    section
+    section(ng-app="creationJoueur")
         h1 Création du personnage
 
         div#erreurs
@@ -15,6 +16,15 @@ block content
                     li=e
 
         form(action="/jeu/1" method="post")
+            fieldset
+                legend Nom du personnage
+                p Choisir votre nom :&nbsp
+                    input(type="text" name="nomJoueur")
+                ul(ng-controller="controlleurCreationJoueur" class="listeJoueursExistants")
+                    p Ou sélectionner un joueur existant :
+                    li(ng-repeat="joueur in joueurs")
+                        input(ng-click="" type="submit" value="{{ joueur.nom }}") 
+
             fieldset
                 legend Disciplines
                 p Choisir 5 disciplines:

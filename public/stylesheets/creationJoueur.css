@@ -1,3 +1,21 @@
+/* Ajouts TP3 */
+
+input[type='text'] {
+  border: solid black 1px;
+}
+input.button[type='submit'] {
+  border: solid black 1px;
+}
+ul.listeJoueursExistants li {
+  margin-left: 10%;
+}
+
+
+
+
+
+/* Fin ajouts TP3 */
+
 #creationJoueur {
     background-color: #808080;
 }
