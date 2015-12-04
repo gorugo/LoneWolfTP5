@@ -2,15 +2,14 @@ extends ../layout
 
 block head
     link(rel="stylesheet", href="/stylesheets/pageJeu.css")
-    script(type='text/javascript', src="/javascript/controlleurs/controlleurHistoire.js")
-    script(type='text/javascript', src="/javascript/controlleurs/controlleurStats.js")
+    script(type='text/javascript', src="/javascript/controlleurs/LoneWolf.js")
 
 block content
-    main
+    main(ng-app="LoneWolf")
         div#title
             img(src="/images/pageTitre.png")
             p#numeroPage= numeroPage
 
-        section#histoire(ng-app='histoireApp', ng-controller='controlleurHistoire')
+        section#histoire(ng-controller='controlleurHistoire')
             div(ng-bind-html='htmlInsert')
         include ./stats.jade
