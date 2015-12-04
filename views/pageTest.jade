@@ -10,6 +10,23 @@ block content
 
     br
 
-    div(ng-controller="controlleurTest") Affichage :
+    div(ng-controller="controlleurTest") 
+      p Test appels web services : 
+      button(ng-click="getTest()") Click Ici Hardi !
+      
+      br
+      p WebService joueur : 
+      br
+
+      li(ng-repeat="discipline in joueur.disciplines")
+        div Arme : {{discipline}}
+
+      br
+      p WebService combat :
+      br
+      p {{getVar}}
+      br
+
+      p Angular Basics : 
       p {{leString}}
       p {{salutation.texte}}
