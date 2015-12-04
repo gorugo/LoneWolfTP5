@@ -1,6 +1,6 @@
 extends layout
 block head
-  script(type='text/javascript', src="javascripts/controllers/test.js")
+  script(type='text/javascript', src="javascript/controlleurs/test.js")
 
 block content
   section(ng-app="appTest")
@@ -10,12 +10,12 @@ block content
 
     br
 
-    div(ng-controller="controlleurTest") 
-      p Test appels web services : 
+    div(ng-controller="controlleurTest")
+      p Test appels web services :
       button(ng-click="getTest()") Click Ici Hardi !
-      
+
       br
-      p WebService joueur : 
+      p WebService joueur :
       br
 
       li(ng-repeat="discipline in joueur.disciplines")
@@ -27,6 +27,6 @@ block content
       p {{getVar}}
       br
 
-      p Angular Basics : 
+      p Angular Basics :
       p {{leString}}
       p {{salutation.texte}}
