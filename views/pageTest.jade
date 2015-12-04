@@ -1,4 +1,6 @@
 extends layout
+block head
+  script(type='text/javascript', src="javascripts/controllers/test.js")
 
 block content
   section(ng-app="appTest")
@@ -10,3 +12,4 @@ block content
 
     div(ng-controller="controlleurTest") Affichage :
       p {{leString}}
+      p {{salutation.texte}}
