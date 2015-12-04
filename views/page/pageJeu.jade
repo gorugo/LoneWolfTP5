@@ -2,6 +2,8 @@ extends ../layout
 
 block head
     link(rel="stylesheet", href="/stylesheets/pageJeu.css")
+    script(type='text/javascript', src="/javascript/controlleurs/controlleurHistoire.js")
+    script(type='text/javascript', src="/javascript/controlleurs/controlleurStats.js")
 
 block content
     main
@@ -9,7 +11,6 @@ block content
             img(src="/images/pageTitre.png")
             p#numeroPage= numeroPage
 
-        section#histoire
-            !{htmlPage}
-
+        section#histoire(ng-app='histoireApp', ng-controller='controlleurHistoire')
+            div(ng-bind-html='htmlInsert')
         include ./stats.jade
