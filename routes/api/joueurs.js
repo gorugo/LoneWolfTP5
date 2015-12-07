@@ -35,6 +35,18 @@ router.get('/:id?', function(req, res) {
     }
 });
 
+router.post('/:id', function(req, res) {
+  var id = req.params.id;
+  Joueur.findById(id, function(err, joueur) {
+      if (err) {
+          res.send(err);
+      } else {
+        req.session.joueur = joueur;
+        res.json({message: "Le joueur a été correctement selectionné."});
+
+      }});
+});
+
 /**
  * Modifie la représentation du joueur.
  * @param id Id du joueur
@@ -154,5 +166,5 @@ router.delete('/avancement/:id', function(req, res) {
     });
 });
 
-module.exports = router;
 
+module.exports = router;

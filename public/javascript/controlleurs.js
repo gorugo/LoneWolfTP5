@@ -9,6 +9,18 @@ app.controller('controlleurHistoire', function($scope, $http, $interpolate, $sce
 
   $scope.continue = function () {
     //    activePage.
+    if(activePage["decision"]) {
+      $http.get('/api/pages/decision/' + activePage.id ).
+      success(function(data, status, headers, config) {
+
+        console.log("success!");
+        console.log(data);
+        $scope.decisions = data;
+      }).
+      error(function(data, status, headers, config) {
+        console.log("error");
+      });
+    }
     console.log('Continue');
   }
 
@@ -85,7 +97,17 @@ app.controller('controlleurCreationJoueur', function($scope, $http) {
 
     // Store chosen character
     window.localStorage["joueurId"] = $scope.joueurs[index]._id;
+    $http.post('/api/joueurs/' + $scope.joueurs[index]._id).
+    success(function(data, status, headers, config) {
 
+      console.log("success!");
+      console.log(data);
+      $scope.joueurs = data;
+      console.log($scope.joueurs);
+    }).
+    error(function(data, status, headers, config) {
+      console.log("error");
+    });
     // Redirect
     window.location = '/jeu/1';
   }
