@@ -10,7 +10,14 @@ ul.listeJoueursExistants li {
   margin-left: 10%;
 }
 
-
+img.removeIcon {
+  float: right;
+  display: block;
+  max-width:24px;
+  max-height:24px;
+  width: 24px;
+  height: 24px;
+}
 
 
 

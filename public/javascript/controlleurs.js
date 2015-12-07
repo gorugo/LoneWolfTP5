@@ -5,14 +5,17 @@ app.controller('controlleurHistoire', function($scope, $http, $sce) {
     var avancementId = window.localStorage["avancementId"];
     var joueurId = window.localStorage["joueurId"];
     var avancement = { pagesId : 1, sectionId : 1};
+    var activePage = {};
     $scope.histoire = '';
 
-    $scope.continue = function () {
+    $scope.getPage = function () {
         var html = '';
         $http.get('/api/pages/' + avancement.pagesId + '/' + avancement.sectionId).
             success(function(data, status, headers, config) {
                 console.log(window.localStorage["Test"]);
                 // Add html depending on text or src
+                activePage = data;
+
                 for (var i  = 0; i < data.contenu.length; i ++) {
                    if(data.contenu[i]['text'] != undefined) {
                     html += '<p>' + data.contenu[i]['text'] + '</p>';
@@ -28,8 +31,11 @@ app.controller('controlleurHistoire', function($scope, $http, $sce) {
                 console.log("Erreur en chargeant le contenu de la page");
             });
     }
-    $scope.continue();
+    $scope.continue = function () {
+    //    activePage.
+    }
 
+    $scope.getPage();
 });
 
 app.controller('controlleurStats', function($scope, $http) {
@@ -74,5 +80,25 @@ app.controller('controlleurCreationJoueur', function($scope, $http) {
     console.log('Index : ' + index);
     console.log('Joueur choisi : ' + $scope.joueurs[index].nom);
 
+  }
+
+
+  $scope.supprimerJoueur = function (index) {
+    console.log("Supprimer : " + $scope.joueurs[index].nom);
+
+    $http.delete('/api/joueurs/' + $scope.joueurs[index]._id).
+    success(function(data, status, headers, config) {
+
+      console.log("Joueur supprimé!");
+
+      console.log(data);
+      $scope.joueurs = data;
+      console.log($scope.joueurs);
+
+      $scope.getJoueursExistants();
+    }).
+    error(function(data, status, headers, config) {
+      console.log("error");
+    });
   }
 });
