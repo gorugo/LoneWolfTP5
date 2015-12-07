@@ -8,7 +8,7 @@ app.controller('controlleurHistoire', function($scope, $http, $interpolate, $sce
   var html = '';
 
   $scope.continue = function () {
-    //    activePage.
+
     if(activePage["decision"]) {
       $http.get('/api/pages/decision/' + activePage.id ).
       success(function(data, status, headers, config) {

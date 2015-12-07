@@ -67,7 +67,7 @@ router.get('/decision/:pageId', function(req, res) {
             res.json({message: "Le joueur n'existe pas dans la session."});
         } else {
             var decisions = u.map(choix.decision, function(decision) {
-                decision.valid = decision.valid(joueur);
+                //decision.valid = decision.valid(joueur);
                 return decision;
             });
             res.json(decisions);
