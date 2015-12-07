@@ -10,7 +10,7 @@ block head
 block content
     img(src="/images/loup_solitaire.png")
 
-    section()
+    section(ng-controller="controlleurCreationJoueur")
         h1 Création du personnage
 
         div#erreurs
@@ -18,8 +18,8 @@ block content
                 each e in erreursMsg
                     li=e
 
-        form(action="/jeu/1" method="post")
-            fieldset(ng-controller="controlleurCreationJoueur")
+        form(action="/jeu/1" method="post" ng-submit="creerJoueur()")
+            fieldset()
                 legend Nom du personnage
                 p Choisir votre nom :&nbsp
                     input(type="text" name="nomJoueur")
