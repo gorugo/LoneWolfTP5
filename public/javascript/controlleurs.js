@@ -27,8 +27,6 @@ app.controller('controlleurHistoire', function($scope, $http, $interpolate, $sce
           html += '<img src=\"' + data.contenu[i]['img'] + '\" />';
         }
       }
-      html += '<p><button class="button" ng-click="continue()"> Continue </button></p>';
-
       console.log(html);
       // Add html to the page
       //$scope.htmlInsert = $sce.trustAsHtml(html);
