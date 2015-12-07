@@ -24,7 +24,7 @@ block content
                 p Choisir votre nom :&nbsp
                     input(type="text" name="nomJoueur")
 
-                button(type="button" , ng-click="getJoueursExistants()") Ou sélectionnez un joueur existant :
+                button(type="button", class="button" , ng-click="getJoueursExistants()") Ou clickez !!
                 ul(class="listeJoueursExistants")
                     li(ng-repeat="joueur in joueurs")
                         input(ng-click="selectJoueur($index)", value="{{joueur.nom}}", type="button")
