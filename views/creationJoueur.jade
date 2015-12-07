@@ -28,6 +28,7 @@ block content
                 ul(class="listeJoueursExistants")
                     li(ng-repeat="joueur in joueurs")
                         input(ng-click="selectJoueur($index)", value="{{joueur.nom}}", type="button")
+                        img(ng-click="supprimerJoueur($index)", src="/images/remove-icon-hi.png", class="removeIcon")
 
             fieldset.disciplines
                 legend Disciplines
