@@ -26,6 +26,8 @@ img.removeIcon {
   width: 20px;
   max-height: 20px;
   max-width: 20px;
+
+  cursor: pointer;
 }
 
 /* Fin ajouts TP3 */
