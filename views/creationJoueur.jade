@@ -3,6 +3,9 @@ extends layout
 block head
     link(rel="stylesheet", href="/stylesheets/creationJoueur.css")
     //script(type='text/javascript', src="/javascript/controlleurs/creationJoueur.js")
+    script(type='text/javascript', src="/javascript/jquery-2.1.4.min.js")
+    script(type='text/javascript', src="/javascript/localCheckForm.js")
+
 
 block content
     img(src="/images/loup_solitaire.png")
@@ -24,9 +27,9 @@ block content
                 button(type="button" , ng-click="getJoueursExistants()") Ou sélectionnez un joueur existant :
                 ul(class="listeJoueursExistants")
                     li(ng-repeat="joueur in joueurs")
-                        input(ng-click="selectJoueur($index)", value="{{joueur.nom}}", type="button") 
+                        input(ng-click="selectJoueur($index)", value="{{joueur.nom}}", type="button")
 
-            fieldset
+            fieldset.disciplines
                 legend Disciplines
                 p Choisir 5 disciplines:
                 div#gauche
@@ -61,7 +64,7 @@ block content
                     label
                         input(type="checkbox" name="discipline" value=c.discipline.MAITRISE_PSYCHIQUE_MATIERE)
                         | Maîtrise Psychique de la Matière
-            fieldset
+            fieldset.equipement
                 legend Équipement
                 p Choisir 2 items:
                 div
@@ -98,4 +101,4 @@ block content
                     label
                         input(type="checkbox" name="objet" value=c.objet.RATIONS_SPECIALES)
                         | Rations spéciales (Objet dans le sac à dos)
-            input.button(type="submit" value="Commencer la partie!")
+            input(value="Commencer la partie!" class="button" type="submit" disabled)

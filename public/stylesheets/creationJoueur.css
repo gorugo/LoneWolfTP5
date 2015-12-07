@@ -11,7 +11,9 @@ ul.listeJoueursExistants li {
 }
 
 
-
+form input.button[disabled] {
+  opacity: 0.2;
+}
 
 
 /* Fin ajouts TP3 */
