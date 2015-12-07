@@ -1,15 +1,20 @@
 var app = angular.module('LoneWolf', []);
 
-app.controller('controlleurHistoire', function($scope, $http, $sce) {
+app.controller('controlleurHistoire', function($scope, $http, $interpolate, $sce) {
 
-    var avancementId = window.localStorage["avancementId"];
     var joueurId = window.localStorage["joueurId"];
     var avancement = { pagesId : 1, sectionId : 1};
     var activePage = {};
+    var html = '';
+
     $scope.histoire = '';
 
+    $scope.continue = function () {
+    //    activePage.
+      console.log('Continue');
+    }
+
     $scope.getPage = function () {
-        var html = '';
         $http.get('/api/pages/' + avancement.pagesId + '/' + avancement.sectionId).
             success(function(data, status, headers, config) {
                 console.log(window.localStorage["Test"]);
@@ -24,26 +29,28 @@ app.controller('controlleurHistoire', function($scope, $http, $sce) {
                     html += '<img src=\"' + data.contenu[i]['img'] + '\" />';
                    }
                 }
+                html += '<p><button ng-click="continue()"> Continue </button></p>';
+
                 console.log(html);
                 // Add html to the page
-                $scope.htmlInsert = $sce.trustAsHtml(html);
+                //$scope.htmlInsert = $sce.trustAsHtml(html);
+                $scope.htmlInsert = $sce.trustAsHtml($interpolate(html)($scope));
             }).error(function(data, status, headers, config) {
                 console.log("Erreur en chargeant le contenu de la page");
             });
     }
-    $scope.continue = function () {
-    //    activePage.
-    }
+
 
     $scope.getPage();
 });
 
 app.controller('controlleurStats', function($scope, $http) {
 
-  $scope.joueur = '';
+  var joueurId = window.localStorage["joueurId"];
 
+  console.log("Recovered from localStorage : " + $scope.joueurId);
   $scope.getJoueur = function () {
-    $http.get('/api/joueurs/565c64518b7057980cb10be9').
+    $http.get('/api/joueurs/' + joueurId ).
       success(function(data, status, headers, config) {
 
       console.log("success!");
@@ -80,6 +87,11 @@ app.controller('controlleurCreationJoueur', function($scope, $http) {
     console.log('Index : ' + index);
     console.log('Joueur choisi : ' + $scope.joueurs[index].nom);
 
+    // Store chosen character
+    window.localStorage["joueurId"] = $scope.joueurs[index]._id;
+
+    // Redirect
+    window.location = '/jeu/1';
   }
 
 
