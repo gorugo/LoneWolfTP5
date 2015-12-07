@@ -2,10 +2,9 @@ extends ../layout
 
 block head
     link(rel="stylesheet", href="/stylesheets/pageJeu.css")
-    script(type='text/javascript', src="/javascript/controlleurs.js")
 
 block content
-    main(ng-app="LoneWolf")
+    main()
         div#title
             img(src="/images/pageTitre.png")
             p#numeroPage= numeroPage
